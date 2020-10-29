@@ -13,7 +13,6 @@ public class ElementosViewModel extends AndroidViewModel {
     ElementosRepositorio elementosRepositorio;
 
     MutableLiveData<List<Elemento>> listaElementos = new MutableLiveData<>();
-    MutableLiveData<Elemento> elementoSeleccionado = new MutableLiveData<>();
 
     public ElementosViewModel(@NonNull Application application) {
         super(application);
@@ -23,13 +22,8 @@ public class ElementosViewModel extends AndroidViewModel {
         listaElementos.setValue(elementosRepositorio.elementos);
     }
 
-
     MutableLiveData<List<Elemento>> obtenerListaElementos(){
         return listaElementos;
-    }
-
-    void establecerElementoSeleccionado(Elemento elemento){
-        elementoSeleccionado.setValue(elemento);
     }
 
     void anyadirElemento(Elemento elemento){
