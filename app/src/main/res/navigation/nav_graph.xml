@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/listarElementosFragment">
+    app:startDestination="@id/recyclerElementosFragment">
 
     <fragment
-        android:id="@+id/listarElementosFragment"
+        android:id="@+id/recyclerElementosFragment"
         android:name="com.company.recyclerview.RecyclerElementosFragment"
-        android:label="fragment_listar_elementos"
-        tools:layout="@layout/fragment_listar_elementos" >
+        android:label="fragment_recycler_elementos"
+        tools:layout="@layout/fragment_recycler_elementos" >
         <action
-            android:id="@+id/action_listarElementosFragment_to_mostrarElementoFragment"
+            android:id="@+id/action_recyclerElementosFragment_to_mostrarElementoFragment"
             app:destination="@id/mostrarElementoFragment" />
         <action
-            android:id="@+id/action_listarElementosFragment_to_crearElementoFragment"
-            app:destination="@id/crearElementoFragment" />
+            android:id="@+id/action_recyclerElementosFragment_to_nuevoElementoFragment"
+            app:destination="@id/nuevoElementoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/crearElementoFragment"
+        android:id="@+id/nuevoElementoFragment"
         android:name="com.company.recyclerview.NuevoElementoFragment"
-        android:label="fragment_crear_elementok"
+        android:label="fragment_nuevo_elemento"
         tools:layout="@layout/fragment_nuevo_elemento" />
     <fragment
         android:id="@+id/mostrarElementoFragment"

@@ -12,18 +12,18 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.company.recyclerview.databinding.FragmentListarElementosBinding;
+import com.company.recyclerview.databinding.FragmentRecyclerElementosBinding;
 
 
 public class RecyclerElementosFragment extends Fragment {
 
-    private FragmentListarElementosBinding binding;
+    private FragmentRecyclerElementosBinding binding;
     private ElementosViewModel elementosViewModel;
     private NavController navController;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentListarElementosBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentRecyclerElementosBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class RecyclerElementosFragment extends Fragment {
         binding.irANuevoElemento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_listarElementosFragment_to_crearElementoFragment);
+                navController.navigate(R.id.action_recyclerElementosFragment_to_nuevoElementoFragment);
             }
         });
     }
