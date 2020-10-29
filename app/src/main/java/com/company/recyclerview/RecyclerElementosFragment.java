@@ -39,5 +39,7 @@ public class RecyclerElementosFragment extends Fragment {
                 navController.navigate(R.id.action_recyclerElementosFragment_to_nuevoElementoFragment);
             }
         });
+
+
     }
 }

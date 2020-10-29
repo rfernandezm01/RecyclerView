@@ -31,5 +31,6 @@ public class NuevoElementoFragment extends Fragment {
         ElementosViewModel elementosViewModel = new ViewModelProvider(requireActivity()).get(ElementosViewModel.class);
         NavController navController = Navigation.findNavController(view);
 
+
     }
 }
