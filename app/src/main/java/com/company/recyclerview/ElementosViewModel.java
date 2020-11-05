@@ -22,7 +22,7 @@ public class ElementosViewModel extends AndroidViewModel {
         listaElementos.setValue(elementosRepositorio.elementos);
     }
 
-    MutableLiveData<List<Elemento>> obtenerElementos(){
+    MutableLiveData<List<Elemento>> obtener(){
         return listaElementos;
     }
 
