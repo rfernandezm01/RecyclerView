@@ -30,7 +30,7 @@ public class ElementosRepositorio {
         callback.cuandoFinalice(elementos);
     }
 
-    public void actualizar(Elemento elemento, float valoracion) {
+    void actualizar(Elemento elemento, float valoracion) {
         elemento.valoracion = valoracion;
     }
 }
