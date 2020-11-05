@@ -20,13 +20,17 @@ public class ElementosRepositorio {
         elementos.add(new Elemento("Elemento constructivo","Un elemento constructivo es cada uno de los componentes materiales que integran una obra de construcción. Se suelen clasificar en estructurales y compartimentadores."));
     }
 
-    void anyadir(Elemento elemento, Callback callback){
+    void insertar(Elemento elemento, Callback callback){
         elementos.add(elemento);
         callback.cuandoFinalice(elementos);
     }
 
-    void eliminar(int posicion, Callback callback) {
-        elementos.remove(posicion);
+    void eliminar(Elemento elemento, Callback callback) {
+        elementos.remove(elemento);
         callback.cuandoFinalice(elementos);
+    }
+
+    public void actualizar(Elemento elemento, float valoracion) {
+        elemento.valoracion = valoracion;
     }
 }

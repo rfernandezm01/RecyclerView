@@ -22,12 +22,12 @@ public class ElementosViewModel extends AndroidViewModel {
         listaElementos.setValue(elementosRepositorio.elementos);
     }
 
-    MutableLiveData<List<Elemento>> obtenerListaElementos(){
+    MutableLiveData<List<Elemento>> obtenerElementos(){
         return listaElementos;
     }
 
-    void anyadirElemento(Elemento elemento){
-        elementosRepositorio.anyadir(elemento, new ElementosRepositorio.Callback() {
+    void insertar(Elemento elemento){
+        elementosRepositorio.insertar(elemento, new ElementosRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Elemento> elementos) {
                 listaElementos.setValue(elementos);
@@ -35,12 +35,16 @@ public class ElementosViewModel extends AndroidViewModel {
         });
     }
 
-    void eliminarElemento(int posicion){
-        elementosRepositorio.eliminar(posicion, new ElementosRepositorio.Callback() {
+    void eliminar(Elemento elemento){
+        elementosRepositorio.eliminar(elemento, new ElementosRepositorio.Callback() {
             @Override
             public void cuandoFinalice(List<Elemento> elementos) {
                 listaElementos.setValue(elementos);
             }
         });
+    }
+
+    void actualizar(Elemento elemento, float valoracion){
+        elementosRepositorio.actualizar(elemento, valoracion);
     }
 }
