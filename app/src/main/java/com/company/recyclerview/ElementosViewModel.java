@@ -45,6 +45,11 @@ public class ElementosViewModel extends AndroidViewModel {
     }
 
     void actualizar(Elemento elemento, float valoracion){
-        elementosRepositorio.actualizar(elemento, valoracion);
+        elementosRepositorio.actualizar(elemento, valoracion, new ElementosRepositorio.Callback() {
+            @Override
+            public void cuandoFinalice(List<Elemento> elementos) {
+                listElementosMutableLiveData.setValue(elementos);
+            }
+        });
     }
 }
