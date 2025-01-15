@@ -16,6 +16,7 @@ public class ElementosViewModel extends AndroidViewModel {
     ElementosRepositorio elementosRepositorio;
 
 
+
     MutableLiveData<Elemento> elementoSeleccionado = new MutableLiveData<>();
 
     MutableLiveData<String> terminoBusqueda = new MutableLiveData<>();
@@ -30,7 +31,6 @@ public class ElementosViewModel extends AndroidViewModel {
         super(application);
 
         elementosRepositorio = new ElementosRepositorio(application);
-        elementosRepositorio = new ElementosRepositorio();
     }
 
 
@@ -43,12 +43,7 @@ public class ElementosViewModel extends AndroidViewModel {
     }
 
     void actualizar(Elemento elemento, float valoracion){
-        elementosRepositorio.actualizar(elemento, valoracion, new ElementosRepositorio.Callback() {
-            @Override
-            public void cuandoFinalice(List<Elemento> elementos) {
-                listElementosMutableLiveData.setValue(elementos);
-            }
-        });
+        elementosRepositorio.actualizar(elemento, valoracion);
     }
 
     void seleccionar(Elemento elemento){
@@ -58,6 +53,7 @@ public class ElementosViewModel extends AndroidViewModel {
     MutableLiveData<Elemento> seleccionado(){
         return elementoSeleccionado;
     }
+
     LiveData<List<Elemento>> obtener(){
         return elementosRepositorio.obtener();
     }
